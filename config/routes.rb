@@ -1,4 +1,6 @@
 HungryPig::Application.routes.draw do
+  match 'dashboard' => 'dashboard#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
