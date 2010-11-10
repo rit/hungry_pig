@@ -1,2 +1,8 @@
 %h1
   Contacts
+
+%ul#contacts
+
+%script{ :id => 'contact_show', :type => 'text/x-jquery-tmpl' }
+  %li
+    ${first_name} ${last_name}
