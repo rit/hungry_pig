@@ -6,6 +6,7 @@ gem 'rails', '3.0.1'
 
 gem 'compass'
 gem 'haml'
+gem 'json'
 gem 'mongrel'
 gem 'nokogiri'
 gem 'pg'
