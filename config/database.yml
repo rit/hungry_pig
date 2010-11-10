@@ -13,7 +13,7 @@ development:
   encoding: unicode
   database: hungry_pig_development
   pool: 5
-  username: hungry_pig
+  username: rit
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -39,7 +39,7 @@ test:
   encoding: unicode
   database: hungry_pig_test
   pool: 5
-  username: hungry_pig
+  username: rit
   password:
 
 production:
@@ -47,5 +47,5 @@ production:
   encoding: unicode
   database: hungry_pig_production
   pool: 5
-  username: hungry_pig
+  username: rit
   password:
