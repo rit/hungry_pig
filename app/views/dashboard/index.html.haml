@@ -1,15 +1,15 @@
 %h1
   Contacts
 
-%ul#contacts
+%ul#contacts.collection
 
 %script{ :id => 'contact_show', :type => 'text/x-jquery-tmpl' }
-  %li
+  %li.member
     ${first_name} ${last_name}
     .tools
       %ul
         %li
-          %a{ :href => '#/contacts/${id}/edit' }
+          %a{ :href => '#/contacts/${id}/edit', 'data-handler' => 'edit' }
             Edit
 
 %script{ :id => 'contact_edit', :type => 'text/x-jquery-tmpl' }
