@@ -13,6 +13,7 @@ gem 'pg'
 gem 'ruby-debug'
 
 group :development, :test do
+  gem 'autotest'
   gem 'rspec'
   gem 'rspec-rails'
 end
