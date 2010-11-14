@@ -13,7 +13,7 @@ $(function() {
   $('.collection').live('edit', function(e) {
     var $member = $(e.target);
     var contact_attr = $member.tmplItem().data;
-    $member.swap($('#contact_edit').tmpl(contact_attr));
+    $member.replaceWith($('#contact_edit').tmpl(contact_attr));
     //swap
   });
 
@@ -21,7 +21,7 @@ $(function() {
     $(e.target).unswap();
   });
 
-  $.fn.util = {};
-  $.fun.util.swap = function() {};
-  $.fun.util.unswap = function() {};
+  // $.fn.util = {};
+  // $.fn.util.swap = function() {};
+  // $.fn.util.unswap = function() {};
 });
