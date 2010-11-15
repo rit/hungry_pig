@@ -9,10 +9,26 @@ body {
   background-color: lightBlue;
   margin: 2em;
 
+  h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+
   .content {
     background-color: #fff;
     margin: auto;
     padding: 2em;
     width: 40em;
+  }
+
+  li.member {
+    margin-bottom: 1em;
+    position: relative;
+  }
+
+  li.member > .tools {
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }
