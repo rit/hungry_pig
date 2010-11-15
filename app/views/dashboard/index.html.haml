@@ -11,6 +11,9 @@
         %li
           %a{ :href => '#/contacts/${id}/edit', 'data-handler' => 'edit' }
             Edit
+        %li
+          %a{ :href => '#/contacts/${id}/', 'data-handler' => 'destroy' }
+            Remove
 
 %script{ :id => 'contact_edit', :type => 'text/x-jquery-tmpl' }
   %form{ :action => '/contacts/${id}', :method => 'post' }
