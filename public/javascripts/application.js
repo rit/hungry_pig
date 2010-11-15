@@ -13,15 +13,25 @@ $(function() {
   $('.collection').live('edit', function(e) {
     var $member = $(e.target);
     var contact_attr = $member.tmplItem().data;
-    $member.replaceWith($('#contact_edit').tmpl(contact_attr));
-    //swap
+    $member.swap($('#contact_edit').tmpl(contact_attr));
   });
 
   $('.collection').live('cancel', function(e) {
     $(e.target).unswap();
   });
 
-  // $.fn.util = {};
-  // $.fn.util.swap = function() {};
-  // $.fn.util.unswap = function() {};
+  $('.collection').live('cancel', function(e) {
+    $(e.target).unswap();
+  });
+
+  $.fn.swap = function(html) {
+    this.data('_swap', this.html());
+    this.html(html);
+    return this;
+  };
+
+  $.fn.unswap = function() {
+    this.html(this.data('_swap'));
+    return this;
+  };
 });

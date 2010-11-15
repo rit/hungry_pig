@@ -23,3 +23,10 @@
       %label{ :for => 'contact[last_name]' }
         Last name
       %input{ :name => 'contact[last_name]', :value => '${last_name}' }
+
+    %li
+      .tools
+        %ul
+          %li
+            %a{ :href => '#/cancel', 'data-handler' => 'cancel' }
+              Cancel
