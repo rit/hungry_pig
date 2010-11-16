@@ -31,6 +31,20 @@ $(function() {
     e.preventDefault();
   });
 
+  $('.collection').live('destroy', function(e) {
+    var id = $(e.target).tmplItem().data.id;
+    var href = 'contacts/' + id;
+    $.ajax({
+      url: href,
+      type: 'POST',
+      data: {_method: 'DELETE'},
+      success: function() {
+        $(e.target).remove();
+      }
+    });
+    e.preventDefault();
+  });
+
   $.fn.swap = function(html) {
     this.data('_swap', this.html());
     this.html(html);
