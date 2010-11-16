@@ -39,7 +39,7 @@ $(function() {
       type: 'POST',
       data: {_method: 'DELETE'},
       success: function() {
-        $(e.target).remove();
+        $(e.target).fadeOut(function() {$(this).remove()});
       }
     });
     e.preventDefault();
