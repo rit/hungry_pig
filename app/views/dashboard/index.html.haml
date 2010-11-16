@@ -28,8 +28,10 @@
       %input{ :name => 'contact[last_name]', :value => '${last_name}' }
 
     %li
-      .tools
+      .tools.buttons
         %ul
+          %li
+            %input{ :type => 'submit', :value => 'Save contact' }
           %li
             %a{ :href => '#/cancel', 'data-handler' => 'cancel' }
               Cancel

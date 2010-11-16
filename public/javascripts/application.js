@@ -20,10 +20,6 @@ $(function() {
     $(e.target).unswap();
   });
 
-  $('.collection').live('cancel', function(e) {
-    $(e.target).unswap();
-  });
-
   $.fn.swap = function(html) {
     this.data('_swap', this.html());
     this.html(html);
