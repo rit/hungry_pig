@@ -20,6 +20,17 @@ $(function() {
     $(e.target).unswap();
   });
 
+  $('.collection').live('submit', function(e) {
+    var $form = $(e.target);
+    $form.ajaxSubmit({
+      success: function(res) {
+        $form.parents('.member')
+          .replaceWith($('#contact_show').tmpl(res.contact));
+      }
+    });
+    e.preventDefault();
+  });
+
   $.fn.swap = function(html) {
     this.data('_swap', this.html());
     this.html(html);

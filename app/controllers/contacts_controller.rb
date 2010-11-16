@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
     contact = Contact.find(params[:id])
     if contact.update_attributes(params[:contact])
       contact = contact.to_json(:only => [:id, :first_name, :last_name])
-      cantact = JSON(contact)
+      contact = JSON(contact)
       render :json => { :contact => contact }
     else
       errors = Hash.new.merge(contact.errors)

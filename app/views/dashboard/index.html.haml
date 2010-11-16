@@ -16,7 +16,7 @@
             Remove
 
 %script{ :id => 'contact_edit', :type => 'text/x-jquery-tmpl' }
-  %form{ :action => '/contacts/${id}', :method => 'post' }
+  %form{ :action => '/contacts/${id}', :method => 'put' }
     %fieldset
       %li
         %label{ :for => 'contact[first_name]' }
