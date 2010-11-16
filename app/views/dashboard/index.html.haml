@@ -17,21 +17,22 @@
 
 %script{ :id => 'contact_edit', :type => 'text/x-jquery-tmpl' }
   %form{ :action => '/contacts/${id}', :method => 'post' }
-    %li
-      %label{ :for => 'contact[first_name]' }
-        First name
-      %input{ :name => 'contact[first_name]', :value => '${first_name}' }
+    %fieldset
+      %li
+        %label{ :for => 'contact[first_name]' }
+          First name
+        %input{ :name => 'contact[first_name]', :value => '${first_name}' }
 
-    %li
-      %label{ :for => 'contact[last_name]' }
-        Last name
-      %input{ :name => 'contact[last_name]', :value => '${last_name}' }
+      %li
+        %label{ :for => 'contact[last_name]' }
+          Last name
+        %input{ :name => 'contact[last_name]', :value => '${last_name}' }
 
-    %li
-      .tools.buttons
-        %ul
-          %li
-            %input{ :type => 'submit', :value => 'Save contact' }
-          %li
-            %a{ :href => '#/cancel', 'data-handler' => 'cancel' }
-              Cancel
+      %li
+        .tools.buttons
+          %ul
+            %li
+              %input{ :type => 'submit', :value => 'Save contact' }
+            %li
+              %a{ :href => '#/cancel', 'data-handler' => 'cancel' }
+                Cancel

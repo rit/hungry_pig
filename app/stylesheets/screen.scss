@@ -4,35 +4,58 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "compass/utilities/lists";
 
 body {
   background-color: lightBlue;
   margin: 2em;
+}
 
-  h1 {
-    font-size: 2em;
-    margin-bottom: 1em;
+h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.content {
+  background-color: #fff;
+  margin: auto;
+  padding: 2em;
+  width: 40em;
+}
+
+li.member {
+  margin-bottom: 1em;
+  position: relative;
+}
+
+li.member > .tools {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tools ul {
+  @include inline-list;
+  li {
+    margin-right: 1em;
   }
+}
 
-  .content {
-    background-color: #fff;
-    margin: auto;
+.buttons {
+  margin-top: 1em;
+}
+
+form {
+  fieldset {
+    border: 1px solid grey;
     padding: 2em;
-    width: 40em;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.5em;
   }
 
-  li.member {
+  li {
     margin-bottom: 1em;
-    position: relative;
-  }
-
-  li.member > .tools {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  .tools li {
-    // display inline
   }
 }
