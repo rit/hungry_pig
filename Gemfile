@@ -13,6 +13,7 @@ gem 'mongrel'
 gem 'nokogiri'
 gem 'pg'
 gem 'ruby-debug'
+gem 'texticle'
 
 group :development, :test do
   gem 'autotest'
