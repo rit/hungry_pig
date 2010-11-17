@@ -5,19 +5,18 @@ $(function() {
 
   $('.tools a').live('click', function(e) {
     var handler = $(this).data('handler');
-    var $member = $(this).parents('.member')
-    $member.trigger(handler);
+    $(this).trigger(handler);
     e.preventDefault();
   });
 
   $('.collection').live('edit', function(e) {
-    var $member = $(e.target);
+    var $member = $(e.target).parents('.member');
     var contact_attr = $member.tmplItem().data;
     $member.swap($('#contact_edit').tmpl(contact_attr));
   });
 
   $('.collection').live('cancel', function(e) {
-    $(e.target).unswap();
+    $(e.target).parents('.member').unswap();
   });
 
   $('.collection').live('submit', function(e) {
@@ -32,14 +31,13 @@ $(function() {
   });
 
   $('.collection').live('destroy', function(e) {
-    var id = $(e.target).tmplItem().data.id;
-    var href = 'contacts/' + id;
+    var href = e.target.href;
     $.ajax({
       url: href,
       type: 'POST',
       data: {_method: 'DELETE'},
       success: function() {
-        $(e.target).fadeAway();
+        $(e.target).parents('.member').fadeAway();
       }
     });
     e.preventDefault();
