@@ -17,6 +17,17 @@ class ContactsController < ApplicationController
     end
   end
 
+  def create
+    contact = Contact.new(params[:contact])
+    if contact.save
+      contact = contact.to_json(:only => [:id, :first_name, :last_name])
+      contact = JSON(contact)
+      render :json => { :contact => contact }
+    else
+      render :json => contact.errors
+    end
+  end
+
   def destroy
     contact = Contact.find(params[:id])
     contact.destroy

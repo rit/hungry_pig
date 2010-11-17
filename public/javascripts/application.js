@@ -38,6 +38,18 @@ $(function() {
     $(this).unswap();
   });
 
+  $('#adding_contact').live('submit', function(e) {
+    e.preventDefault();
+    var $that = $(this);
+    var $form = $(e.target);
+    $form.ajaxSubmit({
+      success: function(res) {
+        $that.unswap();
+        $('#contact_show').tmpl(res.contact).appendTo('#contacts');
+      }
+    });
+  });
+
   $('.collection').live('destroy', function(e) {
     var href = $(e.target).attr('href');
     $.ajax({
