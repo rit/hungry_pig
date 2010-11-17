@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
       render :json => { :contact => contact }
     else
       errors = Hash.new.merge(contact.errors)
-      render :json => { :errors => contact.errors }
+      render :json => { :errors => errors }, :status => 422
     end
   end
 
@@ -22,7 +22,8 @@ class ContactsController < ApplicationController
       contact = contact.as_json(:only => [:id, :first_name, :last_name])
       render :json => { :contact => contact }
     else
-      render :json => contact.errors
+      errors = Hash.new.merge(contact.errors)
+      render :json => { :errors => errors }, :status => 422
     end
   end
 
