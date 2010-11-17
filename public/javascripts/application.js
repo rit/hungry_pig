@@ -3,7 +3,7 @@ $(function() {
     $('#contact_show').tmpl(res.contacts).appendTo('#contacts');
   });
 
-  $('.tools a').live('click', function(e) {
+  $('.tools a, #adding_contact a').live('click', function(e) {
     var handler = $(this).data('handler');
     $(this).trigger(handler);
     e.preventDefault();
@@ -30,8 +30,16 @@ $(function() {
     e.preventDefault();
   });
 
+  $('#adding_contact').live('new', function() {
+    $(this).swap($('#contact_new').tmpl());
+  });
+
+  $('#adding_contact').live('cancel', function() {
+    $(this).unswap();
+  });
+
   $('.collection').live('destroy', function(e) {
-    var href = e.target.href;
+    var href = $(e.target).attr('href');
     $.ajax({
       url: href,
       type: 'POST',

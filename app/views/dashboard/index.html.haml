@@ -3,16 +3,20 @@
 
 %ul#contacts.collection
 
+#adding_contact
+  %a{ :href => '#/contact/new', 'data-handler' => 'new' }
+    Add another contact
+
 %script{ :id => 'contact_show', :type => 'text/x-jquery-tmpl' }
   %li.member
     ${first_name} ${last_name}
     .tools
       %ul
         %li
-          %a{ :href => '#/contacts/${id}/edit', 'data-handler' => 'edit' }
+          %a{ :href => '/contacts/${id}/edit', 'data-handler' => 'edit' }
             Edit
         %li
-          %a{ :href => '#/contacts/${id}/', 'data-handler' => 'destroy' }
+          %a{ :href => '/contacts/${id}/', 'data-handler' => 'destroy' }
             Remove
 
 %script{ :id => 'contact_edit', :type => 'text/x-jquery-tmpl' }
@@ -33,6 +37,28 @@
           %ul
             %li
               %input{ :type => 'submit', :value => 'Save contact' }
+            %li
+              %a{ :href => '#/cancel', 'data-handler' => 'cancel' }
+                Cancel
+
+%script{ :id => 'contact_new', :type => 'text/x-jquery-tmpl' }
+  %form{ :action => '/contacts', :method => 'post' }
+    %fieldset
+      %li
+        %label{ :for => 'contact[first_name]' }
+          First name
+        %input{ :name => 'contact[first_name]', :value => '' }
+
+      %li
+        %label{ :for => 'contact[last_name]' }
+          Last name
+        %input{ :name => 'contact[last_name]', :value => '' }
+
+      %li
+        .tools.buttons
+          %ul
+            %li
+              %input{ :type => 'submit', :value => 'Create contact' }
             %li
               %a{ :href => '#/cancel', 'data-handler' => 'cancel' }
                 Cancel

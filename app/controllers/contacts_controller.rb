@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   def index
-    contacts = Contact.all.to_json(:only => [:id, :first_name, :last_name])
+    contacts = Contact.order(:last_name).all.to_json(:only => [:id, :first_name, :last_name])
     contacts = JSON(contacts)
     render :json => { :contacts => contacts }
   end
