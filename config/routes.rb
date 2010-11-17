@@ -1,7 +1,11 @@
 HungryPig::Application.routes.draw do
   match 'dashboard' => 'dashboard#index'
 
-  resources :contacts
+  resources :contacts do
+    collection do
+      get "search"
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

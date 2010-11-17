@@ -50,6 +50,15 @@ $(function() {
     });
   });
 
+  $('#search form').submit(function(e) {
+    $(this).ajaxSubmit({
+      success: function(res) {
+        $('#contacts').html($('#contact_show').tmpl(res.contacts));
+      }
+    });
+    e.preventDefault();
+  });
+
   $('.collection').live('destroy', function(e) {
     var href = $(e.target).attr('href');
     $.ajax({

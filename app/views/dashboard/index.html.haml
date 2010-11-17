@@ -1,6 +1,11 @@
 %h1
   Contacts
 
+#search
+  = form_tag('/contacts/search', :method => 'get') do
+    = text_field 'contact', 'query'
+    = submit_tag 'Search'
+
 %ul#contacts.collection
 
 #adding_contact

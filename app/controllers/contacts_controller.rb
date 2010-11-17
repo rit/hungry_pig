@@ -32,4 +32,10 @@ class ContactsController < ApplicationController
     contact.destroy
     head :ok
   end
+
+  def search
+    contacts = Contact.search(params[:contact][:query]).
+      as_json(:only => [:id, :first_name, :last_name])
+    render :json => { :contacts => contacts }
+  end
 end
