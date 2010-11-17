@@ -39,11 +39,16 @@ $(function() {
       type: 'POST',
       data: {_method: 'DELETE'},
       success: function() {
-        $(e.target).fadeOut(function() {$(this).remove()});
+        $(e.target).fadeAway();
       }
     });
     e.preventDefault();
   });
+
+  $.fn.fadeAway = function() {
+    this.fadeOut(function() {$(this).remove()});
+    return this;
+  };
 
   $.fn.swap = function(html) {
     this.data('_swap', this.html());
