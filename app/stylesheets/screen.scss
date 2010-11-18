@@ -53,6 +53,19 @@ form {
   label {
     display: block;
     margin-bottom: 0.5em;
+    position: relative;
+
+    strong.err {
+      color: red;
+      display: block;
+      position: absolute;
+      top: 1.7em;
+      left: 15em;
+    }
+  }
+
+  input[type="text"] {
+    width: 20em;
   }
 
   li {
